@@ -1,0 +1,14 @@
+WITH TRIPS AS (
+
+    select 
+    BIKE_ID,
+    DATE(START_TIME) AS TRIP_DATE,
+    START_STATION_ID,
+    END_STATION_ID,
+    USER_TYPE,
+    TRIPDURATION
+    FROM
+    {{ source('DEMO', 'BIKE_2018') }}
+)
+
+SELECT * FROM TRIPS
