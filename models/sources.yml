@@ -7,3 +7,4 @@ sources:
     tables:
       - name: BIKE_2023
       - name: WEATHER
+      - name: BIKE_2018

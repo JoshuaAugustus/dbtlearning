@@ -1,16 +1,16 @@
 WITH CTE AS (
     
     select
-    STARTED_AT,
-    DATE(STARTED_AT) as DATE_STARTED_AT,
-    HOUR(STARTED_AT) as HOUR_STARTED_AT,
-    DAYNAME(STARTED_AT) AS DAY_OF_WEEK_STARTED_AT,
+    START_TIME,
+    DATE(START_TIME) as DATE_START_TIME,
+    HOUR(START_TIME) as HOUR_START_TIME,
+    DAYNAME(START_TIME) AS DAY_OF_WEEK_START_TIME,
 
-    {{get_daytype('STARTED_AT')}}as DAY_TYPE,    
-    {{get_season('STARTED_AT')}} as SEASON
+    {{get_daytype('START_TIME')}}as DAY_TYPE,    
+    {{get_season('START_TIME')}} as SEASON
 
     from 
-    {{ source('DEMO', 'BIKE_2023') }}
+    {{ source('DEMO', 'BIKE_2018') }}
 
 )
 
